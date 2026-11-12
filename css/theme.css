@@ -1,0 +1,4 @@
+/* Design tokens. Change colors here only. */
+:root{--page:#e6def2;--bg:#f6f2fb;--surf:#fff;--ink:#1f1730;--mute:#6b6280;--hd:#4a2a7a;--acc:#4a2a7a;--accon:#fff;--ok:#16866e;--okbg:#dcf3ec;--warn:#b45309;--nobg:#fbe6d3;--line:#e4dcf0;--chip:#ece4f7}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--page:#0e0a14;--bg:#17111f;--surf:#241a31;--ink:#f1ebf8;--mute:#a99fbd;--hd:#2e1b4d;--acc:#b794f4;--accon:#1a1026;--ok:#4fd1b0;--okbg:#14382f;--warn:#f6ad55;--nobg:#47300f;--line:#382a4b;--chip:#33264a;color-scheme:dark}}
+:root[data-theme="dark"]{--page:#0e0a14;--bg:#17111f;--surf:#241a31;--ink:#f1ebf8;--mute:#a99fbd;--hd:#2e1b4d;--acc:#b794f4;--accon:#1a1026;--ok:#4fd1b0;--okbg:#14382f;--warn:#f6ad55;--nobg:#47300f;--line:#382a4b;--chip:#33264a;color-scheme:dark}

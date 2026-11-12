@@ -1,0 +1,5 @@
+import {state} from "../state.js";
+import {esc,member,resolveApps} from "../utils.js";
+export const viewFeed=()=>`<div class="card"><textarea id="np" rows="2" placeholder="Warn others about an unsafe app or permission"></textarea><div style="text-align:right;margin-top:8px"><button class="btn" data-a="post">Post to community</button></div></div>`+state.feed.map(p=>{
+  const name=p.who==="tip"?"Weekly pro tip":member(p.who).n;
+  return `<div class="card post ${p.who==="tip"?"tip":p.auto?"auto":""}"><div class="who">${name}${p.auto?' <span class="chip ok">Automatic post</span>':""}</div><p>${esc(resolveApps(p.text,p.who))}</p>${p.cm.map(c=>`<div class="cm"><b>${c.w}</b> ${esc(c.t)}</div>`).join("")}<div class="acts" style="margin-top:8px"><button data-a="like" data-v="${p.id}" class="${p.liked?"liked":""}">${p.liked?"♥":"♡"} ${p.likes}</button><button data-a="cmt" data-v="${p.id}">Comment</button></div>${p.open?`<div class="inl"><input id="ci${p.id}" placeholder="Add a comment" aria-label="Add a comment"><button class="btn" data-a="csend" data-v="${p.id}">Send</button></div>`:""}</div>`}).join("");

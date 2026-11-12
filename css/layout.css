@@ -1,0 +1,27 @@
+/* Page shell: phone frame, header, nav, overlay layers, toast. */
+*{box-sizing:border-box}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html,body{height:100%;margin:0}
+body{background:var(--page);color:var(--ink);font:15px/1.4 "Figtree","Segoe UI",system-ui,sans-serif;display:grid;place-items:center}
+button,input,textarea{font:inherit;color:inherit}
+button{cursor:pointer;border:0;background:none}
+button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.phone{position:relative;width:390px;height:min(800px,calc(100% - 24px));background:var(--bg);border-radius:34px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 0 0 9px #14101c,0 24px 60px rgba(30,10,60,.35)}
+@media (max-width:480px){.phone{width:100%;height:100%;border-radius:0;box-shadow:none}}
+header{background:var(--hd);color:#fff;padding:16px 18px 14px;display:flex;align-items:center;justify-content:space-between}
+header h1{margin:0;font-size:20px;font-weight:700}
+header small{opacity:.75;display:block;font-size:12px}
+main{flex:1;overflow-y:auto;padding:14px}
+nav{display:flex;background:var(--surf);border-top:1px solid var(--line)}
+nav button{flex:1;padding:9px 0 8px;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:12px;color:var(--mute)}
+nav button.on{color:var(--acc);font-weight:700}
+nav svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.layer{position:absolute;inset:0;background:var(--bg);display:flex;flex-direction:column;z-index:5}
+.layer.in{animation:up .22s ease-out}
+@keyframes up{from{transform:translateY(40px);opacity:0}}
+@media (prefers-reduced-motion:reduce){.layer.in{animation:none}}
+.lh{background:var(--hd);color:#fff;padding:12px 14px;display:flex;align-items:center;gap:10px}
+.lh h2{margin:0;font-size:17px;flex:1}.lh .btn{background:rgba(255,255,255,.18);color:#fff}
+.back{color:#fff;font-size:22px;padding:0 4px}
+.toast{position:absolute;left:16px;right:16px;bottom:78px;background:#1f1730;color:#fff;padding:10px 14px;border-radius:12px;font-size:13px;opacity:0;pointer-events:none;transition:opacity .2s;z-index:20}
+.toast.show{opacity:1}

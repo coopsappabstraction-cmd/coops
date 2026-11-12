@@ -1,0 +1,57 @@
+/* UI stuff*/
+.card{background:var(--surf);border:1px solid var(--line);border-radius:14px;padding:12px;margin-bottom:10px}
+.card.link{position:relative;cursor:pointer;transition:background .15s}
+.card.link:hover{background:var(--chip)}
+.card.link:has(.stretch:focus-visible){outline:2px solid var(--acc);outline-offset:2px}
+.stretch:focus-visible{outline:none}
+.stretch::after{content:"";position:absolute;inset:0;border-radius:14px}
+.card.link .msg{position:relative;z-index:1}
+.row{display:flex;align-items:center;gap:11px}
+.grow{flex:1;min-width:0}
+.av,.ic{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:700;flex:none}
+.ic{border-radius:10px;color:#1b1b1b}
+.sub{color:var(--mute);font-size:13px}
+.empty{text-align:center;color:var(--mute);padding:30px 10px}
+.btn{padding:8px 13px;border-radius:999px;background:var(--acc);color:var(--accon);font-weight:600;font-size:13px}
+.btn.ghost{background:var(--chip);color:var(--ink)}
+.chip{font-size:12px;font-weight:700;padding:2px 9px;border-radius:999px}
+.chip.ok{background:var(--okbg);color:var(--ok)}.chip.no{background:var(--nobg);color:var(--warn)}
+.seg{display:flex;background:var(--chip);border-radius:999px;padding:3px;margin-bottom:10px}
+.seg button{flex:1;padding:7px;border-radius:999px;font-weight:600;color:var(--mute)}
+.seg button.on{background:var(--surf);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.15)}
+.search{width:100%;padding:10px 14px;border-radius:12px;border:1px solid var(--line);background:var(--surf);margin-bottom:10px}
+.count{font-size:12px;color:var(--mute);display:flex;align-items:center;gap:3px;min-width:34px;justify-content:flex-end}
+.hidden-note{font-size:12px;color:var(--warn)}
+.sw{position:relative;width:42px;height:24px;flex:none;display:inline-block}
+.sw input{position:absolute;inset:0;opacity:0;margin:0;cursor:pointer;z-index:1}
+.sw i{position:absolute;inset:0;background:var(--line);border-radius:99px;transition:.15s}
+.sw i::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;transition:.15s}
+.sw input:checked+i{background:var(--ok)}.sw input:checked+i::after{transform:translateX(18px)}
+.sw input:focus-visible+i{outline:2px solid var(--acc);outline-offset:2px}
+/* Permissions */
+.perm{background:var(--surf);border:1px solid var(--line);border-radius:12px;padding:11px 12px;margin-bottom:9px}
+.perm p{margin:4px 0;color:var(--mute);font-size:13px}.perm small{color:var(--mute)}
+.perm-actions{display:flex;gap:8px;margin-top:10px}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.pr{display:flex;justify-content:space-between;align-items:center}
+/* Feed */
+.tip{border-left:4px solid var(--ok)}.auto{border-left:4px solid var(--acc)}
+.post .who{font-weight:700}.post p{margin:6px 0}
+.acts{display:flex;gap:14px;color:var(--mute);font-size:13px}
+.acts button{color:var(--mute);font-weight:600}.acts button.liked{color:var(--warn)}
+.cm{background:var(--bg);border-radius:10px;padding:6px 10px;margin-top:6px;font-size:13px}
+.inl{display:flex;gap:8px;margin-top:8px}.inl input{flex:1;padding:8px 12px;border-radius:99px;border:1px solid var(--line);background:var(--surf)}
+textarea{width:100%;border:1px solid var(--line);border-radius:12px;padding:10px;background:var(--surf);resize:none}
+/* Chat */
+.chat{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:8px}
+.bub{max-width:80%;padding:8px 12px;border-radius:16px;background:var(--surf);border:1px solid var(--line)}
+.bub.me{align-self:flex-end;background:var(--acc);color:var(--accon);border-color:transparent}
+.chat-note{margin:0;padding:8px 14px;background:var(--surf)}
+.chat-input{align-items:flex-end;padding:10px 12px;margin:0;background:var(--surf);border-top:1px solid var(--line)}
+.chat-input textarea{flex:1;width:auto;min-width:0;padding:8px 12px;border-radius:14px}
+/* Sharing (granularity_level 2) */
+.share-head{width:100%;text-align:left}
+.chev{color:var(--mute);transition:transform .15s;font-size:18px}.chev.open{transform:rotate(90deg)}
+.share-body{margin-top:10px;border-top:1px solid var(--line)}
+.share-row{padding:8px 0;border-bottom:1px solid var(--line)}.share-row:last-child{border:0;padding-bottom:0}
+.share-row .av,.share-row .ic{width:32px;height:32px;font-size:13px}
